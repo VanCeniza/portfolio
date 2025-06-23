@@ -120,7 +120,7 @@ header ul a{
   left: 5%;
 }
 
-.person-title{
+.person-title i{
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -131,6 +131,70 @@ header ul a{
   background-color: #0b1d516e;
   box-shadow: 0 0 5px #725CAD;
   border-radius: 50px;
+  transition: 0.3s;
+}
+
+.person-title i:hover{
+  border: 1px solid #8CCDEB;
+  color: white;
+  box-shadow: 0 0 15px #8CCDEB;
+  cursor: pointer;
+}
+.person-info h1{
+  font-size: 60px;
+  max-width: 700px;
+  font-weight: 700;
+  line-height: 70px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.person-info p{
+  max-width: 650px;
+  line-height: 30px;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.person-info button{
+  display: flex;
+  color: white;
+  align-items: center;
+  font-size: 15px;
+  gap: 8px;
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: 1px solid #727fde;
+  background-color: #0b1d516e;
+  box-shadow: 0 0 5px #727fde;
+}
+
+.person-info button:hover{
+  border: 1px solid #8CCDEB;
+  color: white;
+  box-shadow: 0 0 15px #8CCDEB;
+  cursor: pointer;
+}
+
+.gradient {
+  background-image: linear-gradient(to right, #008baa, #7e42a7, #6600c5, #6070fd, #2a46ff, #0099ff, #008ead);
+  background-size: 200% auto;
+  background-position: 0% center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: animate-gradient 2.5s linear infinite;
+  display: inline-block;
+}
+
+@keyframes animate-gradient {
+  from {
+    background-position: 0% center;
+  }
+  to {
+    background-position: 200% center;
+  }
 }
 
 
