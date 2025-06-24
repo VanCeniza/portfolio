@@ -1,15 +1,9 @@
 import './App.css';
+import Navbar from './components/Navbar/navbar.jsx';
+import About from './components/About/about.jsx';
 import galaxyVideo from './videos/galaxy.mp4';
 import blackHole from './videos/blackhole.mp4';
-import dP from './images/me.png';
 import { useEffect } from 'react';
-import { LuComputer } from "react-icons/lu";
-import { FaFacebook } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
-import { BiMessageSquareDetail } from "react-icons/bi";
-
-
 
 function App() {
 
@@ -23,62 +17,20 @@ function App() {
         className="bg-vid" loop autoPlay muted playsInline
         src={galaxyVideo}>
       </video>
-      <header>
-        <div className='topleft'>
-          <img src={dP} alt="myface"></img>
-          <h1><span style={{color: '#9400FF'}}>Van</span>Bryan</h1>
-        </div>
-      
-        <ul>
-          <li><a href='#about'>About</a></li>
-          <li><a href='#resume'>Resume</a></li>
-          <li><a href='#skills'>Skills</a></li>
-          <li><a href='#projects'>Projects</a></li>
-          <li><a href='#contact'>Contact</a></li>
-        </ul>
 
-        <div className="box-icons">
-          <a href="https://web.facebook.com/vanbryan.ceniza">
-            <i className='facebook'><FaFacebook/></i>
-          </a>
-          <a href="https://github.com/VanCeniza">
-            <i className='github'><FaGithub/></i>
-          </a>
-          <a href="https://mail.google.com/mail/u/cenizavanbryan22@gmail.com/#compose">
-            <i className='gmail'><SiGmail/></i>
-          </a>
-        </div>
-      </header>
+      {/*Callout for the Navigation Bar*/}
+      <Navbar />  
+      
+      {/*Callout for the About Section*/}
+      <About />  
 
       <video
         className="bh-vid" loop autoPlay muted playsInline
         src={blackHole}>
       </video>
 
-      <section className='person'>
-        <div className='person-info'>
-          <div className='person-title'>
-            <i>
-              <LuComputer />
-              <span>Computer Engineer</span>
-            </i>
-          </div>
-
-          <h1>
-            Hi i'm Van Bryan Ceniza, <span className="gradient">Computer Engineer</span>
-          </h1>
-
-          <p>I'm a fourth-year computer engineering student at the Technological Institute of the Philippines Manila Campus, 
-            I possess a unique blend of skills in both graphic design and coding. Through my experience in implementing visual designs into the coding process, 
-            I have developed a keen understanding of how to effectively implement designs in a coding environment.
-          </p   >
-
-          <button>
-            <BiMessageSquareDetail />
-            Contact Me
-          </button>
-        </div>
-      </section>
+      <div className='scroll-down'></div>
+      
     </div>
   );
 }
