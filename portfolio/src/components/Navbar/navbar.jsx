@@ -6,7 +6,7 @@ import { SiGmail } from "react-icons/si";
 
 function Navbar() {
     return(
-        <header>
+        <header className='head'>
             <div className='topleft'>
                 <img src={dP} alt="myface"></img>
                 <h1>My<span style={{color: '#9400FF'}}>Portfolio</span></h1>

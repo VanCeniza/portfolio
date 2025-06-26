@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar/navbar.jsx';
 import About from './components/About/about.jsx';
+import Resume from './components/Resume/resume.jsx'
 import galaxyVideo from './videos/galaxy.mp4';
 import blackHole from './videos/blackhole.mp4';
 import { useEffect } from 'react';
@@ -22,7 +23,7 @@ function App() {
       <Navbar />  
       
       {/*Callout for the About Section*/}
-      <About />  
+      <About />
 
       <video
         className="bh-vid" loop autoPlay muted playsInline
@@ -30,6 +31,9 @@ function App() {
       </video>
 
       <div className='scroll-down'></div>
+      
+      {/*Callout for the About Section*/}
+      <Resume />  
       
     </div>
   );

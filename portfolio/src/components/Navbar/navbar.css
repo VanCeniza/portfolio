@@ -1,3 +1,8 @@
+.head{
+  position: sticky;
+  width: 100%;
+} 
+
 header{
   display: flex;
   position: absolute;
@@ -48,6 +53,7 @@ header ul a{
 
 .box-icons{
   display: flex;
+  margin: 5%;
   gap: 40px;
 }
 
