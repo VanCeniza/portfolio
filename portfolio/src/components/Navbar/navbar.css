@@ -1,5 +1,5 @@
 .head{
-  position: sticky;
+  position: fixed;
   width: 100%;
 } 
 
@@ -62,9 +62,9 @@ header ul a{
   align-items: center;
   justify-content: center;
   line-height: 1px;
-  font-size: 20px;
-  width: 31px;
-  height: 31px;
+  font-size: 23px;
+  width: 35px;
+  height: 35px;
   border: 2px solid #5431b3;
   text-decoration: none;
   color: lightgray;
