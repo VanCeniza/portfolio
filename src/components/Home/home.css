@@ -61,6 +61,7 @@
   border: 1px solid #727fde;
   background-color: #0b1d516e;
   box-shadow: 0 0 5px #727fde;
+  transform: 0.3s;
 }
 
 .person-info button:hover{
@@ -92,11 +93,6 @@
 .picture-of-me img{
   height: 810px;
   animation: float 3s linear infinite;
-  transition: filter 0.3s ease;
-}
-
-.picture-of-me img:hover{
-  filter: hue-rotate(135deg) brightness(1.2) saturate(1.4);
 }
 
 @keyframes animate-gradient {

@@ -35,12 +35,12 @@ body{
 }
 
 .scroll-down{
+  z-index: 50;
   height: 55px;
   width: 30px;
   border: 2px solid lightgray;
-  position: absolute;
-  left: 49%;
-  bottom: 40%;
+  position: fixed;
+  bottom: 2%;
   border-radius: 50px;
   cursor: pointer;
   box-shadow: 0 0 15px rgb(211, 211, 211, 0.477);

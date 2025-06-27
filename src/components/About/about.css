@@ -1,10 +1,14 @@
 .info-section{
+    width: 50%;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
-    margin-top: 100px;
+    position: relative;
 }
+
 .section-title{
     font-size: 40px;
     font-weight: 700;
@@ -14,10 +18,9 @@
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 20px;
-    width: 150%;
+    width: 120%;
     height: 100%;
     margin-top: 30px;
-    right: 500px;
 }
 
 .card{
@@ -26,15 +29,47 @@
     justify-content: center;
     position: relative;
     width: auto;
-    height: 40vh;
+    height: 35vh;
+    bottom: 10%;
     overflow: hidden;
     border: 1px solid gray;
     background-color: #080020b7;
     border-radius: 20px;
+    transition: 0.3s;
+}
+
+.card:hover{
+    box-shadow: 0 0 15px rgba(211, 211, 211, 0.5);
+}
+
+.card:nth-child(3){
+    grid-row: span 2;
+    height: 72vh;
+    bottom: 30px;
+}
+
+.card:nth-child(3) p{
+    bottom: 1%;
+}
+
+.card:nth-child(3) h1{
+    bottom: 2%;
+}
+
+.card:nth-child(4){
+    grid-column: span 2;
+}
+
+.card:nth-child(4)P{
+    max-width: 650px;
+}
+
+.card:nth-child(4) h1{
+    bottom: 35%;
 }
 
 .card img{
-    width: 35%;
+    width: 50%;
     height: 50%;
     object-fit: cover;
 }
@@ -54,16 +89,60 @@
     bottom: 3%;
     left: 5%;
     z-index: 1;
-    max-width: 100%;
+    max-width: 93%;
     color: gray;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 20px;
 }
 
+.card h1.time{
+    margin-bottom: -37px;
+}
+
+.card img.card-face{
+    width: 240px;
+    height: auto;
+    margin-top: 30px;
+    margin-left: 5%;
+    border-radius: 10px;
+    opacity: 55%;
+    transition: opacity 2s ease;
+}
+
+.card:hover img.card-face{
+    opacity: 100%;
+}
+
+.card h1.time{
+    margin-bottom: 0px;
+    right: 10px;
+}
+
+.card h1.greet{
+    margin-bottom: 50%;
+    right: 10px;
+}
+
+.card h1.stack{
+    margin-bottom: 0px;
+}
+
+.card h1.techie{
+    margin-bottom: 55px;
+}
+
+.card img.tech-stack{
+    height: 70%;
+}
+
+.card img.tech-enjoyer{
+    height: 70%;
+}
+
 .card video{
-    margin-top: 10%;
+    margin-top: 5%;
     width: 70%;
-    height: 50%;
-    object-fit: cover;
+    height: 60%;
+    object-fit: scale-down;
     mix-blend-mode: lighten;
 }
