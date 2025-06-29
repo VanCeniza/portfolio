@@ -10,7 +10,7 @@ function Home() {
         loop: {},
     })
     return(
-        <section className='person'>
+        <section id='home' className='person'>
             <div className='person-info'>
                 <div className='person-title'>
                     <i>

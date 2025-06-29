@@ -3,10 +3,31 @@ import grid0 from '../../images/grid0.png';
 import grid1 from '../../images/grid1.png';
 import earth from '../../videos/glob.mp4';
 import grid2 from '../../images/grid2.png';
+import { useEffect } from 'react';
 
 function About() {
+  useEffect(() => {
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const moveX = -x * 0.1; // adjust multiplier for intensity
+        const moveY = -y * 0.1;
+
+        card.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = `translate(0, 0)`;
+      });
+    });
+  }, []);
+  
     return(
-        <section className='info-section'>
+        <section id='about' className='info-section'>
             <h1 className='section-title'>About Me</h1>
             <div className='info-cards'>
                 <div className='card'>
@@ -14,6 +35,7 @@ function About() {
                     <p>I'm highly flexible with time zones and locations. Based in Manila, Philippines, 
                         I'm open to collaborating on remote projects with teams around the world.
                     </p>
+
                     <video className="card-vid" loop autoPlay muted playsInline
                     src={earth}></video>
                 </div>

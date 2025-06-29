@@ -34,11 +34,44 @@ header ul li{
   list-style: none;
 }
 
-header ul a{
-  text-decoration: none;
+.nav-list {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  padding: 15px 30px;
+  border-radius: 50px;
+  background-color: rgba(31, 55, 94, 0.274);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px #725CAD;
+}
+
+.nav-link {
+  position: relative;
+  z-index: 2;
   color: white;
   font-weight: 700;
-  margin: 0 10px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #9400FF;
+}
+
+.nav-indicator {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+  min-width: 40px;
+  min-height: 20px;
 }
 
 .topleft{
@@ -47,7 +80,7 @@ header ul a{
 }
 
 .topleft img{
-  width: 56px;
+  width: 65px;
   margin: 0 15px;
 }
 

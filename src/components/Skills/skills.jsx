@@ -16,7 +16,7 @@ import filmora from '../../images/14.png';
 
 function Skills() {
     return(
-        <section className='skills-section'>
+        <section id='skills' className='skills-section'>
             <h1 className='skills-section-title'> My Skills</h1>
             <div className='container-skills'>
                 <img src={bigbrain} alt='utak' className='skills-image'></img>
