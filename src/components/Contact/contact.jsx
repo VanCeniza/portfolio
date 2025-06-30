@@ -1,5 +1,4 @@
 import './contact.css';
-import '../../App.css';
 import { FaPhoneVolume } from "react-icons/fa6";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa";
@@ -8,7 +7,7 @@ import { IoSend } from "react-icons/io5";
 function Contact() {
   return (
     <section id='contact' className='contact-section'>
-      <h1 className='section-title autoDisplay'>Let's Get in Touch</h1>
+      <h1 className='section-title'>Let's Get in Touch</h1>
         <div className='social-box autoBlur'>
             <a href="tel:+1234567890" className="contact-icon" title="Call Me">
             <i><FaPhoneVolume/></i>
@@ -24,7 +23,7 @@ function Contact() {
             </a>
         </div> 
 
-        <div className='contact-box autoBlur'>
+        <div className='contact-box'>
             <p>Whatever you're looking to build a new website, improve your existing platform,
             or bring a unique project to life. I'm here to help.</p>
             <p>Full Name</p>

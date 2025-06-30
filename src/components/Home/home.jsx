@@ -1,5 +1,4 @@
 import './home.css';
-import '../../App.css';
 import dP from '../../images/portrait.png'
 import { LuComputer } from "react-icons/lu";
 import { BiMessageSquareDetail } from "react-icons/bi";
@@ -12,7 +11,7 @@ function Home() {
     })
     return(
         <section id='home' className='person'>
-            <div className='person-info autoBlur'>
+            <div className='person-info'>
                 <div className='person-title'>
                     <i>
                         <LuComputer />
@@ -37,7 +36,7 @@ function Home() {
 
             </div>
 
-            <div className='picture-of-me autoBlur'>
+            <div className='picture-of-me'>
                 <img src={dP} alt='myface' className='portrait'></img>
             </div>
 

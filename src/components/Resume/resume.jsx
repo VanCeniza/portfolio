@@ -1,5 +1,4 @@
 import './resume.css';
-import '../../App.css';
 import cert1 from '../../images/cert1.png';
 import cert2 from '../../images/cert2.png';
 import cert3 from '../../images/cert3.png';
@@ -41,7 +40,7 @@ function Resume() {
 
     return(
     <section id='resume' class="resume-section">
-        <h1 className='resume-section-title autoDisplay'> My Resume</h1>
+        <h1 className='resume-section-title'> My Resume</h1>
         <div className="education-timeline">
         <div className="timeline fadeInLeft">
             <h1 className="education-title">Education</h1>
@@ -63,7 +62,7 @@ function Resume() {
         </div>
         </div>
 
-    <div className='cv-placeholder autoBlur'>
+    <div className='cv-placeholder'>
         <h2>Curriculum Vitae</h2>
         <a className='download-btn' href="Van_Ceniza_CV.pdf" download="Ceniza_CV.pdf" >
             Download CV
@@ -71,7 +70,7 @@ function Resume() {
         <img src={cv} alt='mycv' className='preview'></img>
     </div>
 
-    <div className="certificates-carousel fadeInRight">
+    <div className="certificates-carousel">
         <h2>Certificates</h2>
         <div className="carousel-viewport">
             <div className="carousel-inner" ref={carouselRef}>
