@@ -1,87 +1,88 @@
 .resume-section {
-    display: flex;
-    justify-content: space-between;
-    padding: 180px 5%;
-    gap: 80px;
-    background: transparent;
-    color: white;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  padding: 180px 10%;
+  gap: 80px;
+  background: transparent;
+  color: white;
+  flex-wrap: wrap;
 }
 
 .resume-section-title {
-    font-size: 40px;
-    font-weight: 700;
-    position: relative;
-    bottom: 100px;
-    left: 38%;
+  font-size: 40px;
+  font-weight: 700;
+  position: relative;
+  bottom: 100px;
+  left: 43%;
 }
 
 .education-timeline {
-    flex: 1;
-    min-width: 300px;
-    position: relative;
-}
-
-.education-timeline h1 {
-    position: relative;
-    margin-bottom: 30px;
-    font-size: 24px;
-    bottom: 13%;
-    right: 70%;
+  flex: 1;
+  min-width: 300px;
+  position: relative;
 }
 
 .timeline {
-    position: relative;
-    width: 100%;
-    padding: 40px 0;
-    bottom: 15%;
-    right: 100%;
-    min-height: 500px;
+  position: relative;
+  width: 100%;
+  bottom: 5%;
+  right: 100%;
+  min-height: 500px;
+}
+
+.education-title {
+  position: relative;
+  font-size: 28px;
+  bottom: 60px;
+  justify-self: center;
+  margin-bottom: 30px;
+  text-align: left;
+  color: #ffffff;
 }
 
 .timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 2px;
-    height: 100%;
-    background-color: #727fde;
-    transform: translateX(-50%);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background-color: #727fde;
+  transform: translateX(-50%);
 }
 
 .timeline-item {
-    position: relative;
-    width: 50%;
-    padding: 20px 20px;
+  position: relative;
+  width: 50%;
+  padding: 20px 20px;
 }
 
 .timeline-item.left {
-    left: -40px;
-    text-align: right;
+  left: -40px;
+  text-align: right;
 }
 
 .timeline-item.right {
-    left: 50%;
-    text-align: left;
+  left: 50%;
+  text-align: left;
 }
 
 .timeline-item .dot {
-    position: absolute;
-    top: 20px;
-    width: 12px;
-    height: 12px;
-    background-color: #727fde;
-    border-radius: 50%;
-    z-index: 1;
+  position: absolute;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  background-color: #727fde;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .timeline-item.left .dot {
-    right: -6px;
+  right: -6px;
 }
 
 .timeline-item.right .dot {
-    left: -6px;
+  left: -6px;
 }
 
 .timeline-item .content {
@@ -99,10 +100,10 @@
 }
 
 .timeline-item .content span {
-    display: block;
-    font-size: 12px;
-    color: #ccc;
-    margin-top: 5px;
+  display: block;
+  font-size: 12px;
+  color: #ccc;
+  margin-top: 5px;
 }
 
 .timeline-item .content p {
@@ -123,27 +124,28 @@
 }
 
 .certificates-carousel {
-    flex: 1;
-    min-width: 300px;
-    position: relative;
-    height: 500px;
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  height: 500px;
 }
 
 .certificates-carousel h2 {
-    margin-bottom: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  justify-self: center;
 }
 
 .carousel-inner {
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
   height: 220px; /* Match your .carousel-viewport height */
   margin: 10px 0;
   background-color: rgba(0, 0, 0, 0.6);
-  border: 1px solid #727fde;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -153,22 +155,22 @@
 }
 
 .carousel-controls {
-    position: absolute;
-    top: 45%;
-    right: -40px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  position: absolute;
+  top: 80%;
+  right: -40px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .carousel-controls button {
-    background-color: #727fde;
-    border: none;
-    color: white;
-    padding: 8px;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: #727fde;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .education-timeline {
@@ -176,15 +178,18 @@
 }
 
 .certificates-carousel {
-    align-self: flex-start;
-    margin-top: 0;
+  align-self: flex-start;
+  margin-top: -15px;
 }
 
 /* Fade effect container */
 .carousel-viewport {
+  border-radius: 10px;
   position: relative;
-  height: 300px; /* Show only one certificate at a time */
+  height: 650px; /* Show how many certificates at once */
   overflow: hidden;
+  background-color: #511d7c42;
+  border: 1px solid #727fde;
 }
 
 /* Top and bottom fade overlays */
@@ -213,6 +218,50 @@
 .bottom-fade {
   bottom: 0;
   background: linear-gradient(to top, rgba(50, 0, 92, 0.452), rgba(13, 13, 13, 0));
+}
+
+.cv-placeholder{
+  flex: 1;
+  right: 80px;
+  min-width: 300px;
+  position: relative;
+  align-self: flex-start;
+  margin-top: -15px;
+}
+
+.cv-placeholder a{
+  left: 3%;
+  position: relative;
+}
+
+.preview{
+  width: 400px;
+  height: auto;
+  display: block;
+  margin-top: 7%;
+  border-radius: 6px;
+  box-shadow: 0 0 5px #727fde88;
+  position: relative;
+  right: 30%;
+}
+
+.download-btn {
+  background-color: #0b1d516e;
+  border: 1px solid #727fde;
+  box-shadow: 0 0 5px #727fde;
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  box-shadow: 0 0 15px #727fdeb4;
+  opacity: 0.7;
 }
 
 @media (max-width: 768px) {

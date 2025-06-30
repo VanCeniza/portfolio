@@ -1,4 +1,5 @@
 import './about.css';
+import '../../App.css';
 import grid0 from '../../images/grid0.png';
 import grid1 from '../../images/grid1.png';
 import earth from '../../videos/glob.mp4';
@@ -28,7 +29,7 @@ function About() {
   
     return(
         <section id='about' className='info-section'>
-            <h1 className='section-title'>About Me</h1>
+            <h1 className='section-title autoDisplay'>About Me</h1>
             <div className='info-cards'>
                 <div className='card'>
                     <h1 className='time'>Time Management</h1>

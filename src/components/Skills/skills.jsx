@@ -1,4 +1,5 @@
 import './skills.css';
+import '../../App.css';
 import bigbrain from '../../images/digital brain.png';
 import py from '../../images/1.png';
 import cplus from '../../images/2.png';
@@ -17,10 +18,10 @@ import filmora from '../../images/14.png';
 function Skills() {
     return(
         <section id='skills' className='skills-section'>
-            <h1 className='skills-section-title'> My Skills</h1>
+            <h1 className='skills-section-title autoDisplay'> My Skills</h1>
             <div className='container-skills'>
                 <img src={bigbrain} alt='utak' className='skills-image'></img>
-                <div className='designer'>
+                <div className='designer autoDisplay'>
                     <h1 className='gradient'>Designer</h1>
                     <p>Well-versed in design platforms like Figma and Adobe XD, I bring both 
                         creative vision and technical precision to the table. I specialize 
@@ -29,7 +30,7 @@ function Skills() {
                         feel seamless and responsive across devices.</p>
                 </div>
                 
-                <div className='coder'>
+                <div className='coder autoDisplay'>
                     <h1 className='gradient'>Coder</h1>
                     <p>I'm well-versed in HTML, CSS, and JavaScript, with hands-on 
                         experience using modern frameworks such as React and Node.js 

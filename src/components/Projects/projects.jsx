@@ -1,4 +1,5 @@
 import './projects.css';
+import '../../App.css';
 import project1 from '../../videos/project1.mp4';
 import project2 from '../../videos/project2.mp4';
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -30,9 +31,9 @@ function Projects() {
 
     return(
         <section id='projects' className='myprojects'>
-           <h1 className='section-title'>My Projects</h1>
+           <h1 className='section-title autoDisplay'>My Projects</h1>
            <div className='project-card'>
-                <div className='project-vidbox'>
+                <div className='project-vidbox autoBlur'>
                     <video id='project1'
                         className="project" muted
                         src={project1}>
@@ -41,7 +42,7 @@ function Projects() {
                 </div>
             </div> 
 
-            <div className='project-info'>
+            <div className='project-info fadeInRight'>
                 <h1>Online <span className='gradient'>Web-based Printing </span> Services</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -59,7 +60,7 @@ function Projects() {
             </div>
 
             <div className='project-card'>
-                <div className='project-vidbox'>
+                <div className='project-vidbox autoBlur'>
                     <video id='project2'
                         className="project"
                         src={project2}>
@@ -67,7 +68,7 @@ function Projects() {
                 </div>
             </div> 
 
-            <div className='project-info'>
+            <div className='project-info fadeInRight'>
                 <h1>Harbee: <span className='gradient'>Honey Harvester </span> and <span className='gradient'>Monitoring </span> App UI/UX</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -85,7 +86,7 @@ function Projects() {
             </div>
 
             <div className='project-card'>
-                <div className='project-vidbox'>
+                <div className='project-vidbox autoBlur'>
                     <video id='project3'
                         className="project"
                         src={project2}>
@@ -93,7 +94,7 @@ function Projects() {
                 </div>
             </div> 
 
-            <div className='project-info'>
+            <div className='project-info fadeInRight'>
                 <h1>My <span className='gradient'>Portfolio </span> Website</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 

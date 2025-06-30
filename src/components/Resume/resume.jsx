@@ -1,7 +1,9 @@
 import './resume.css';
+import '../../App.css';
 import cert1 from '../../images/cert1.png';
 import cert2 from '../../images/cert2.png';
 import cert3 from '../../images/cert3.png';
+import cv from '../../images/cvpreview.png';
 import React, { useState, useRef } from 'react';
 
 const educationData = [
@@ -39,10 +41,10 @@ function Resume() {
 
     return(
     <section id='resume' class="resume-section">
-        <h1 className='resume-section-title'> My Resume</h1>
+        <h1 className='resume-section-title autoDisplay'> My Resume</h1>
         <div className="education-timeline">
-        <h1>Education</h1>
-        <div className="timeline">
+        <div className="timeline fadeInLeft">
+            <h1 className="education-title">Education</h1>
             {educationData.map((item, index) => (
                 <div
                 key={index}
@@ -59,9 +61,17 @@ function Resume() {
             </div>
         ))}
         </div>
-      </div>
+        </div>
 
-      <div className="certificates-carousel">
+    <div className='cv-placeholder autoBlur'>
+        <h2>Curriculum Vitae</h2>
+        <a className='download-btn' href="Van_Ceniza_CV.pdf" download="Ceniza_CV.pdf" >
+            Download CV
+        </a>
+        <img src={cv} alt='mycv' className='preview'></img>
+    </div>
+
+    <div className="certificates-carousel fadeInRight">
         <h2>Certificates</h2>
         <div className="carousel-viewport">
             <div className="carousel-inner" ref={carouselRef}>
@@ -78,7 +88,7 @@ function Resume() {
           <button onClick={scrollUp}>▲</button>
           <button onClick={scrollDown}>▼</button>
         </div>
-      </div>
+    </div>
     </section>
     );
 }
