@@ -1,50 +1,61 @@
-.head{
+.head {
   position: fixed;
   width: 100%;
-} 
-
-header{
-  display: flex;
-  position: absolute;
   top: 0;
-  right: 0;
-  left: 0;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-  background-color: rgba(255, 255, 255, 0.123);
-  backdrop-filter: blur(10px);
-  padding: 0 30px;
-  box-shadow: 0 0 15px #725CAD;
   z-index: 999;
 }
 
-header ul{
+header {
   display: flex;
+  position: relative;
+  align-items: center;
   justify-content: space-between;
-  width: 40%;
-  padding: 15px 30px;
-  border-radius: 50px;
-  background-color: rgba(31, 55, 94, 0.274);
+  min-height: 80px;
+  background-color: rgba(255, 255, 255, 0.123);
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px #725CAD;
+  padding: 0 clamp(15px, 3vw, 30px);
+  box-shadow: 0 0 15px #725cad;
+  z-index: 999;
 }
 
-header ul li{
-  list-style: none;
+.topleft {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.topleft img {
+  width: clamp(45px, 6vw, 65px);
+  height: auto;
+  margin: 0 clamp(8px, 1.5vw, 15px);
+}
+
+.topleft h1 {
+  font-size: clamp(18px, 2.5vw, 24px);
+  margin: 0;
+  white-space: nowrap;
 }
 
 .nav-list {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 40%;
+  gap: clamp(5px, 1vw, 10px);
   padding: 3px 5px;
   border-radius: 50px;
   background-color: rgba(31, 55, 94, 0.274);
   backdrop-filter: blur(10px);
-  box-shadow: 0 0 10px #725CAD;
+  box-shadow: 0 0 10px #725cad;
+  list-style: none;
+  margin: 0;
+  flex-wrap: nowrap;
+  min-width: fit-content;
+}
+
+.nav-list li {
+  list-style: none;
+  margin: 0;
 }
 
 .nav-link {
@@ -52,61 +63,121 @@ header ul li{
   z-index: 2;
   color: white;
   font-weight: 700;
-  padding: 8px 16px;
+  padding: clamp(10px, 1.5vw, 12px) clamp(16px, 2vw, 20px);
   border-radius: 20px;
   transition: color 0.3s ease;
   text-decoration: none;
+  font-size: clamp(16px, 1.8vw, 20px);
+  white-space: nowrap;
+  display: block;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: #9400FF;
+  color: #9400ff;
 }
 
 .nav-indicator {
   position: absolute;
   background-color: #ffffff;
   border-radius: 20px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother easing */
   z-index: 1;
   pointer-events: none;
   min-width: 40px;
   min-height: 20px;
+  will-change: transform, left, width; /* Optimize for animations */
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
-.topleft{
+.box-icons {
   display: flex;
-  align-items: center;
-}
-
-.topleft img{
-  width: 65px;
-  margin: 0 15px;
-}
-
-.box-icons{
-  display: flex;
-  margin: 5%;
-  gap: 40px;
-}
-
-.box-icons a{
-  display: flex;
+  gap: clamp(15px, 3vw, 40px);
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  line-height: 1px;
-  font-size: 23px;
-  width: 35px;
-  height: 35px;
+}
+
+.box-icons a {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: clamp(25px, 3.5vw, 30px);
+  width: clamp(40px, 5vw, 45px);
+  height: clamp(40px, 5vw, 45px);
   border: 2px solid #5431b3;
   text-decoration: none;
   color: lightgray;
   border-radius: 50%;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
-.box-icons a:hover{
-  background-color: #725CAD;
+.box-icons a:hover {
+  background-color: #725cad;
   color: black;
-  box-shadow: 0 0 15px #725CAD;
+  box-shadow: 0 0 15px #725cad;
+  transform: scale(1.1);
+}
+
+/* Mobile Navigation */
+@media (max-width: 1024px) {
+  .nav-list {
+    gap: clamp(2px, 0.5vw, 5px);
+    padding: 2px 3px;
+  }
+
+  .nav-link {
+    padding: clamp(4px, 0.8vw, 6px) clamp(6px, 1.2vw, 10px);
+    font-size: clamp(10px, 1.2vw, 14px);
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    min-height: 70px;
+    padding: 0 clamp(10px, 2vw, 20px);
+  }
+
+  .nav-list {
+    order: 3;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: space-around;
+  }
+
+  .box-icons {
+    gap: clamp(10px, 2vw, 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .topleft h1 {
+    display: none;
+  }
+
+  .nav-link {
+    font-size: clamp(9px, 2.5vw, 12px);
+    padding: 4px 8px;
+  }
+
+  .box-icons a {
+    font-size: clamp(16px, 4vw, 20px);
+    width: clamp(28px, 6vw, 32px);
+    height: clamp(28px, 6vw, 32px);
+  }
+}
+
+/* High zoom levels and high DPI displays */
+@media (min-resolution: 150dpi) {
+  .nav-indicator {
+    transition: all 0.3s ease; /* Faster transition for high zoom */
+  }
+}
+
+/* Prevent layout shifts during zoom */
+@media (min-zoom: 1.25) {
+  .nav-indicator {
+    transition-duration: 0.2s; /* Even faster for high zoom */
+  }
 }

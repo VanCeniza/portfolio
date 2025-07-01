@@ -6,9 +6,9 @@ import cv from '../../images/cvpreview.png';
 import React, { useState, useRef } from 'react';
 
 const educationData = [
-  { label: 'Kindergarten', year: '2006 – 2009', school: 'Foundational Christian Pre-School', details: 'Learned basic reading and social skills.' },
   { label: 'Elementary', year: '2009 – 2016', school: 'Mauban South Central Elementary School I', details: 'Introduced to foundational academic disciplines.' },
-  { label: 'High School', year: '2016 – 2022', school: 'Dr. Maria D. Pastrana Nation Science Oriented High School', details: 'Graduated Grade 8 to 12 w/ Honors. Picked STEM as SHS Strand' },
+  { label: 'Junior High School', year: '2016 – 2020', school: 'Dr. Maria D. Pastrana National Science Oriented High School', details: 'Graduated Grade 8 to 10 w/ Honors.' },
+  { label: 'Senior High School', year: '2020 – 2022', school: 'Dr. Maria D. Pastrana National Science Oriented High School', details: 'Picked STEM as SHS Strand. Graduated Grade 11 to 12 w/ Honors.' },
   { label: 'College', year: '2022 – Present', school: 'Technological Institute of the Philippines Manila', details: 'Pursuing BS in Computer Engineering.' },
 ];
 
@@ -42,8 +42,8 @@ function Resume() {
     <section id='resume' class="resume-section">
         <h1 className='resume-section-title'> My Resume</h1>
         <div className="education-timeline">
+        <h1 className="education-title">Education</h1>
         <div className="timeline fadeInLeft">
-            <h1 className="education-title">Education</h1>
             {educationData.map((item, index) => (
                 <div
                 key={index}

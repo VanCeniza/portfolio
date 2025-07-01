@@ -8,7 +8,7 @@ function Contact() {
   return (
     <section id='contact' className='contact-section'>
       <h1 className='section-title'>Let's Get in Touch</h1>
-        <div className='social-box autoBlur'>
+        <div className='social-box'>
             <a href="tel:+1234567890" className="contact-icon" title="Call Me">
             <i><FaPhoneVolume/></i>
             +63 928 155 0132

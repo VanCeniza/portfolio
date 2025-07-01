@@ -1,47 +1,53 @@
 .resume-section {
   display: flex;
   justify-content: space-between;
-  padding: 180px 10%;
-  gap: 80px;
+  padding: clamp(2rem, 8vh, 4rem) clamp(1rem, 5vw, 5%);
+  gap: clamp(2rem, 5vw, 4rem);
   background: transparent;
   color: white;
   flex-wrap: wrap;
+  min-height: 100vh;
+  align-items: flex-start;
 }
 
 .resume-section-title {
-  font-size: 40px;
+  font-size: clamp(28px, 5vw, 40px);
   font-weight: 700;
   position: relative;
-  bottom: 100px;
-  left: 43%;
+  top: 5vw;
+  left: 50%;
+  background: rgba(0, 0, 0, 0.8); 
+  padding: clamp(0.5rem, 2vh, 1rem) clamp(1rem, 3vw, 2rem);
+  border-radius: 10px;
+  border: 1px solid #727fde;
+  box-shadow: 0 0 10px rgba(114, 127, 222, 0.3);
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
 }
 
 .education-timeline {
   flex: 1;
   min-width: 300px;
   position: relative;
+  margin-top: clamp(3rem, 8vh, 5rem);
 }
 
 .timeline {
   position: relative;
   width: 100%;
-  bottom: 5%;
-  right: 100%;
   min-height: 500px;
 }
 
 .education-title {
-  position: relative;
-  font-size: 28px;
-  bottom: 60px;
-  justify-self: center;
-  margin-bottom: 30px;
-  text-align: left;
+  font-size: clamp(20px, 4vw, 28px);
+  margin-bottom: 2rem;
+  text-align: center;
   color: #ffffff;
 }
 
 .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
@@ -54,17 +60,20 @@
 .timeline-item {
   position: relative;
   width: 50%;
-  padding: 20px 20px;
+  padding: 20px;
+  margin-bottom: 2rem;
 }
 
 .timeline-item.left {
-  left: -40px;
+  left: 0;
   text-align: right;
+  padding-right: 30px;
 }
 
 .timeline-item.right {
   left: 50%;
   text-align: left;
+  padding-left: 30px;
 }
 
 .timeline-item .dot {
@@ -90,10 +99,10 @@
   background-color: rgba(0, 0, 0, 0.75);
   border: 1px solid #727fde;
   border-radius: 15px;
-  padding: 10px 15px;
-  max-width: 220px;
+  padding: 15px;
+  max-width: clamp(200px, 25vw, 280px);
   box-shadow: 0 0 10px #727fde88;
-  font-size: 16px;
+  font-size: clamp(14px, 1.6vw, 16px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform-origin: center;
   z-index: 1;
@@ -101,20 +110,20 @@
 
 .timeline-item .content span {
   display: block;
-  font-size: 12px;
+  font-size: clamp(10px, 1.2vw, 12px);
   color: #ccc;
   margin-top: 5px;
 }
 
 .timeline-item .content p {
   margin-top: 8px;
-  font-size: 14px;
+  font-size: clamp(12px, 1.4vw, 14px);
   color: #ccc;
   display: none;
 }
 
 .timeline-item .content:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: 0 0 20px #727fdecc;
   z-index: 10;
 }
@@ -123,17 +132,76 @@
   display: block;
 }
 
+.cv-placeholder {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  align-self: flex-start;
+  margin-top: clamp(3rem, 8vh, 5rem);
+  text-align: center;
+}
+
+.cv-placeholder h2 {
+  font-size: clamp(20px, 4vw, 24px);
+  margin-bottom: 1rem;
+}
+
+.cv-placeholder a {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.preview {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+  box-shadow: 0 0 5px #727fde88;
+}
+
+.download-btn {
+  background-color: #0b1d516e;
+  border: 1px solid #727fde;
+  box-shadow: 0 0 5px #727fde;
+  color: white;
+  padding: clamp(8px, 1.5vw, 12px) clamp(20px, 3vw, 30px);
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: clamp(14px, 1.6vw, 16px);
+}
+
+.download-btn:hover {
+  box-shadow: 0 0 15px #727fdeb4;
+  opacity: 0.7;
+  transform: translateY(-2px);
+}
+
 .certificates-carousel {
   flex: 1;
   min-width: 300px;
   position: relative;
-  height: 500px;
+  margin-top: clamp(3rem, 8vh, 5rem);
 }
 
 .certificates-carousel h2 {
+  font-size: clamp(20px, 4vw, 24px);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.carousel-viewport {
+  border-radius: 10px;
   position: relative;
-  margin-bottom: 20px;
-  justify-self: center;
+  height: clamp(400px, 50vh, 500px);
+  overflow: hidden;
+  background-color: #511d7c42;
+  border: 1px solid #727fde;
 }
 
 .carousel-inner {
@@ -143,21 +211,28 @@
 }
 
 .carousel-item {
-  height: 220px; /* Match your .carousel-viewport height */
+  height: clamp(180px, 25vh, 220px);
   margin: 10px 0;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
   overflow: hidden;
+}
+
+.certificate-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #727fde88;
 }
 
 .carousel-controls {
   position: absolute;
-  top: 80%;
-  right: -40px;
+  top: 50%;
+  right: -50px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -168,46 +243,25 @@
   background-color: #727fde;
   border: none;
   color: white;
-  padding: 8px;
+  padding: clamp(6px, 1vw, 10px);
   border-radius: 5px;
   cursor: pointer;
+  font-size: clamp(12px, 1.4vw, 16px);
+  transition: 0.3s;
 }
 
-.education-timeline {
-    margin-top: 80px; /* adjust to match video alignment */
+.carousel-controls button:hover {
+  background-color: #8a94f0;
+  transform: scale(1.1);
 }
 
-.certificates-carousel {
-  align-self: flex-start;
-  margin-top: -15px;
-}
-
-/* Fade effect container */
-.carousel-viewport {
-  border-radius: 10px;
-  position: relative;
-  height: 650px; /* Show how many certificates at once */
-  overflow: hidden;
-  background-color: #511d7c42;
-  border: 1px solid #727fde;
-}
-
-/* Top and bottom fade overlays */
 .carousel-fade {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 50px;
   pointer-events: none;
   z-index: 2;
-}
-
-.certificate-img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #727fde88;
 }
 
 .top-fade {
@@ -220,68 +274,84 @@
   background: linear-gradient(to top, rgba(50, 0, 92, 0.452), rgba(13, 13, 13, 0));
 }
 
-.cv-placeholder{
-  flex: 1;
-  right: 80px;
-  min-width: 300px;
-  position: relative;
-  align-self: flex-start;
-  margin-top: -15px;
-}
-
-.cv-placeholder a{
-  left: 3%;
-  position: relative;
-}
-
-.preview{
-  width: 400px;
-  height: auto;
-  display: block;
-  margin-top: 7%;
-  border-radius: 6px;
-  box-shadow: 0 0 5px #727fde88;
-  position: relative;
-  right: 30%;
-}
-
-.download-btn {
-  background-color: #0b1d516e;
-  border: 1px solid #727fde;
-  box-shadow: 0 0 5px #727fde;
-  color: white;
-  padding: 10px 30px;
-  border: none;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.download-btn:hover {
-  box-shadow: 0 0 15px #727fdeb4;
-  opacity: 0.7;
-}
-
-@media (max-width: 768px) {
+/* Mobile and tablet adjustments */
+@media (max-width: 1024px) {
   .resume-section {
     flex-direction: column;
     align-items: center;
+    gap: 3rem;
   }
 
-  .timeline {
-    left: 50%;
-    transform: translateX(-50%);
+  .education-timeline,
+  .cv-placeholder,
+  .certificates-carousel {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .timeline::before {
+    left: 30px;
   }
 
   .timeline-item {
     width: 100%;
     left: 0 !important;
-    text-align: center;
+    text-align: left;
+    padding-left: 60px;
+    padding-right: 20px;
+  }
+
+  .timeline-item .dot {
+    left: 24px !important;
+    right: auto !important;
+  }
+
+  .timeline-item .content {
+    max-width: 100%;
   }
 
   .carousel-controls {
-    right: 10px;
+    right: -30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-section {
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    padding-left: 50px;
+  }
+
+  .timeline-item .dot {
+    left: 14px !important;
+  }
+
+  .carousel-controls {
+    right: -20px;
+  }
+
+  .carousel-controls button {
+    padding: 4px 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-section {
+    padding: 1rem 0.5rem;
+  }
+
+  .carousel-controls {
+    right: -15px;
+  }
+
+  .preview {
+    max-width: 280px;
   }
 }

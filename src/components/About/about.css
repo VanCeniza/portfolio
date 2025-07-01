@@ -1,152 +1,294 @@
-.info-section{
-    width: 50%;
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
+.info-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: clamp(50px, 10vw, 100px) auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 700;
+  position: relative;
+  margin-bottom: clamp(30px, 5vw, 70px);
+  background: rgba(0, 0, 0, 0.8);
+  padding: clamp(0.5rem, 2vh, 1rem) clamp(1rem, 3vw, 2rem);
+  border-radius: 10px;
+  border: 1px solid #727fde;
+  box-shadow: 0 0 10px rgba(114, 127, 222, 0.3);
+  text-align: center;
+  top: 3vw;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(15px, 2vw, 20px);
+  width: 100%;
+  margin-top: 30px;
+  position: relative;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  min-height: 35vh;
+  overflow: hidden;
+  border: 1px solid gray;
+  background-color: #080020b7;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+}
+
+.card:hover {
+  box-shadow: 0 0 15px rgba(211, 211, 211, 0.5);
+  transform: translateY(-5px);
+}
+
+.card:nth-child(3) {
+  grid-row: span 2;
+  min-height: 60vh;
+  padding: clamp(1.5rem, 3vh, 2rem);
+}
+
+.card:nth-child(4) {
+  grid-column: span 2;
+  padding: clamp(1.5rem, 3vh, 2rem);
+}
+
+/* Card content layout */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  z-index: 3; /* Higher z-index to stay above images */
+}
+
+.card h1 {
+  position: relative;
+  margin: 0 0 clamp(1rem, 3vh, 1.5rem) 0;
+  font-size: clamp(18px, 3vw, 25px);
+  color: white; /* Changed to white for better contrast */
+  background: rgba(0, 0, 0, 0.8); /* Stronger background */
+  padding: clamp(0.5rem, 1.5vh, 0.75rem) clamp(0.75rem, 2vw, 1rem);
+  border-radius: 8px;
+  border: 1px solid rgba(114, 127, 222, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: fit-content;
+  max-width: 85%; /* Limit width to leave space for images */
+  backdrop-filter: blur(5px); /* Add blur effect */
+}
+
+.card p {
+  position: relative;
+  margin: 0 0 auto 0;
+  color: #f0f0f0; /* Lighter color for better readability */
+  font-size: clamp(12px, 1.4vw, 14px);
+  line-height: clamp(18px, 2.2vw, 22px);
+  flex-grow: 1;
+  padding: clamp(0.75rem, 2vh, 1rem);
+  background: rgba(85, 6, 150, 0.089); /* Add background to text */
+  border-radius: 8px;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  max-width: 100%; /* Limit width to leave space for images */
+  width: 150%;
+}
+
+/* Large background images */
+.card img,
+.card video {
+  position: absolute;
+  z-index: 1; /* Behind text content */
+  opacity: 0.4; /* More transparent for background effect */
+  transition: all 0.3s ease;
+  object-fit: cover;
+}
+
+.card:hover img,
+.card:hover video {
+  opacity: 0.6; /* Slightly more visible on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Specific positioning for each card type */
+.card img.card-face {
+  width: clamp(200px, 35vw, 300px);
+  height: clamp(250px, 40vh, 350px);
+  right: -20px; /* Extend beyond card edge */
+  top: 20%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.card img.tech-stack {
+  width: clamp(180px, 30vw, 250px);
+  height: clamp(180px, 30vh, 250px);
+  right: -10px;
+  top: 30%;
+  object-fit: contain;
+}
+
+.card img.tech-enjoyer {
+  width: clamp(160px, 28vw, 220px);
+  height: clamp(160px, 28vh, 220px);
+  right: -15px;
+  top: 35%;
+  object-fit: contain;
+}
+
+.card video {
+  width: clamp(200px, 35vw, 280px);
+  height: clamp(200px, 35vh, 280px);
+  right: -20px;
+  top: 25%;
+  mix-blend-mode: lighten;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Special adjustments for larger cards */
+.card:nth-child(3) img.card-face {
+  width: clamp(250px, 40vw, 350px);
+  height: clamp(300px, 45vh, 400px);
+  right: -30px;
+  top: 25%;
+}
+
+.card:nth-child(4) {
+  display: flex;
+  height: 10vw;
+  flex-direction: row; /* Row layout for wide card */
+  align-items: flex-start;
+}
+
+.card:nth-child(4) .card-content {
+  flex: 1;
+  max-width: 65%; /* Leave space for large image */
+  padding-right: 2rem;
+}
+
+.card:nth-child(4) img.tech-enjoyer {
+  position: relative;
+  width: clamp(200px, 30vw, 280px);
+  height: clamp(200px, 30vh, 280px);
+  right: auto;
+  top: auto;
+  flex-shrink: 0;
+  margin-left: auto;
+  opacity: 0.5;
+  border-radius: 15px;
+}
+
+.card:nth-child(4):hover img.tech-enjoyer {
+  opacity: 0.7;
+  transform: scale(1.02);
+}
+
+/* Mobile adjustments */
+@media (max-width: 1024px) {
+  .card:nth-child(4) {
     flex-direction: column;
-    align-items: center;
-    position: relative;
-}
+  }
 
-.section-title{
-    font-size: 40px;
-    font-weight: 700;
-    position: relative;
-    top: 70px;
-}
+  .card:nth-child(4) .card-content {
+    max-width: 100%;
+    padding-right: 0;
+    margin-bottom: 1rem;
+  }
 
-.info-cards{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 20px;
-    width: 120%;
-    height: 100%;
-    margin-top: 30px;
-    position: relative;
-    top: 70px;
-}
-
-.card{
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: relative;
-    width: auto;
-    height: 35vh;
-    bottom: 10%;
-    overflow: hidden;
-    border: 1px solid gray;
-    background-color: #080020b7;
-    border-radius: 20px;
-    transition: 0.3s;
-}
-
-.card:hover{
-    box-shadow: 0 0 15px rgba(211, 211, 211, 0.5);
-}
-
-.card:nth-child(3){
-    grid-row: span 2;
-    height: 72vh;
-    bottom: 30px;
-}
-
-.card:nth-child(3) p{
-    bottom: 1%;
-}
-
-.card:nth-child(3) h1{
-    bottom: 2%;
-}
-
-.card:nth-child(4){
-    grid-column: span 2;
-}
-
-.card:nth-child(4)P{
-    max-width: 650px;
-}
-
-.card:nth-child(4) h1{
-    bottom: 35%;
-}
-
-.card img{
-    width: 50%;
-    height: 50%;
-    object-fit: cover;
-}
-
-.card h1{
+  .card:nth-child(4) img.tech-enjoyer {
     position: absolute;
-    margin: 0;
-    bottom: 40%;
-    left: 5%;
-    font-size: 25px;
-    z-index: 1;
-    color: lightgray;
+    right: -10px;
+    top: 30%;
+    margin-left: 0;
+  }
+
+  .card h1,
+  .card p {
+    max-width: 75%;
+  }
 }
 
-.card p{
-    position: absolute;
-    bottom: 3%;
-    left: 5%;
-    z-index: 1;
-    max-width: 93%;
-    color: gray;
-    font-size: 12px;
-    line-height: 20px;
+@media (max-width: 768px) {
+  .info-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card:nth-child(3),
+  .card:nth-child(4) {
+    grid-column: 1;
+    grid-row: auto;
+    min-height: 40vh;
+  }
+
+  .card h1 {
+    font-size: clamp(16px, 4vw, 20px);
+    margin-bottom: clamp(0.75rem, 2vh, 1rem);
+    max-width: 70%;
+  }
+
+  .card p {
+    font-size: clamp(11px, 2.8vw, 13px);
+    line-height: clamp(16px, 3.5vw, 19px);
+    max-width: 70%;
+  }
+
+  /* Adjust image sizes for mobile */
+  .card img.card-face {
+    width: clamp(150px, 40vw, 200px);
+    height: clamp(180px, 45vh, 240px);
+  }
+
+  .card img.tech-stack {
+    width: clamp(120px, 35vw, 160px);
+    height: clamp(120px, 35vh, 160px);
+  }
+
+  .card img.tech-enjoyer {
+    width: clamp(100px, 30vw, 140px);
+    height: clamp(100px, 30vh, 140px);
+  }
+
+  .card video {
+    width: clamp(140px, 40vw, 180px);
+    height: clamp(140px, 40vh, 180px);
+  }
 }
 
-.card h1.time{
-    margin-bottom: -37px;
-}
+@media (max-width: 480px) {
+  .info-section {
+    width: 95%;
+    padding: 0 0.5rem;
+  }
 
-.card img.card-face{
-    width: 240px;
-    height: auto;
-    margin-top: 30px;
-    margin-left: 5%;
-    border-radius: 10px;
-    opacity: 55%;
-    transition: opacity 2s ease;
-}
+  .card {
+    min-height: 35vh;
+    padding: clamp(0.75rem, 2vw, 1rem);
+  }
 
-.card:hover img.card-face{
-    opacity: 100%;
-}
+  .card h1 {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.75rem;
+    max-width: 65%;
+  }
 
-.card h1.time{
-    margin-bottom: 0px;
-    right: 10px;
-}
+  .card p {
+    padding: 0.75rem;
+    max-width: 65%;
+  }
 
-.card h1.greet{
-    margin-bottom: 50%;
-    right: 10px;
-}
-
-.card h1.stack{
-    margin-bottom: 0px;
-}
-
-.card h1.techie{
-    margin-bottom: 55px;
-}
-
-.card img.tech-stack{
-    height: 70%;
-}
-
-.card img.tech-enjoyer{
-    height: 70%;
-}
-
-.card video{
-    margin-top: 5%;
-    width: 70%;
-    height: 60%;
-    object-fit: scale-down;
-    mix-blend-mode: lighten;
+  /* Smaller images for very small screens */
+  .card img.card-face {
+    width: clamp(120px, 45vw, 160px);
+    height: clamp(150px, 50vh, 200px);
+  }
 }
