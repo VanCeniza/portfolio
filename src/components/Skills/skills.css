@@ -148,7 +148,14 @@
     padding-bottom: clamp(6rem, 12vh, 10rem); /* Maintain bottom padding */
   }
 
-  .designer,
+  .designer{
+    position: relative;
+    top: 70px;
+    left: auto;
+    right: auto;
+    max-width: 100%;
+    text-align: center;
+  }
   .coder {
     position: relative;
     top: auto;

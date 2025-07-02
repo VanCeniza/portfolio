@@ -163,6 +163,11 @@
     padding: 0 0.5rem;
   }
 
+  .section-title {
+    position: relative;
+    top: 60px;
+  }
+
   .project-card {
     flex-direction: column;
     text-align: center;

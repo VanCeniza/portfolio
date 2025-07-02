@@ -40,7 +40,12 @@ function Projects() {
         </div>
         <div className='project-info'>
           <h1>Online <span className='gradient'>Web-based Printing </span> Services</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Our project in Software Design during our second year of college involved presenting 
+            a website that offered printing shop business owners a way to expand beyond their 
+            physical stores. The platform enabled them to set up an online store and connect with customers 
+            who wanted a more convenient way to access printing services. Through our website, 
+            users could place orders and have their printed materials delivered to them via 
+            existing logistics companies.</p>
           <a
             href="https://webprints.pythonanywhere.com/register"
             target="_blank"
@@ -60,7 +65,11 @@ function Projects() {
         </div>
         <div className='project-info'>
           <h1>Harbee: <span className='gradient'>Honey Harvester </span> and <span className='gradient'>Monitoring </span> App UI/UX</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>A simple mobile UI/UX design we presented during our Methods of Research class in our third year of college. 
+            I created it by envisioning one of our proposed design options specifically, Option 3, 
+            which involved developing a mobile app that allows users to monitor and conveniently 
+            harvest honey once our prototype has finished collecting it
+          </p>
           <a
             href="https://www.figma.com/proto/uFDDarGR12G0rO6N42V0Wv/UI-UX-Bee-Monitoring-App?node-id=1-44&t=yigYZTqDzpWLahzq-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A43"
             target="_blank"
@@ -80,7 +89,10 @@ function Projects() {
         </div>
         <div className='project-info'>
           <h1>My <span className='gradient'>Portfolio </span> Website</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>My most recent personal project is a portfolio website that I developed using the React framework. 
+            It features dynamic DOM manipulation and serves as a platform to showcase my skills, projects, and resume. 
+            This website also represents my ongoing experimentation with React, and I plan to continuously improve 
+            it as I learn new techniques and technologies moving forward.</p>
           <a
             href="https://vanceniza.github.io/portfolio/"
             target="_blank"
